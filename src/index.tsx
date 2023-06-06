@@ -4,6 +4,8 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { App } from "./App";
 import Feed from "./components/Feed";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     <ColorModeScript />
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

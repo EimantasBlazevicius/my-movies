@@ -12,10 +12,23 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { EditIcon, SettingsIcon, StarIcon } from "@chakra-ui/icons";
+import { useSelector, useDispatch } from "react-redux";
+import { getCurrentUserSelector } from "../../slice/selectors";
+import { getUser } from "../../slice/index";
 
 const Navigation = () => {
+  const dispatch = useDispatch();
   const { navigation, heading, menuOption, footer } =
     useMultiStyleConfig("Navigation");
+  const currentUser = useSelector(getCurrentUserSelector);
+
+  React.useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+
+  React.useEffect(() => {
+    console.log(currentUser);
+  }, [currentUser]);
 
   return (
     <Flex flexDirection="column" sx={navigation}>
@@ -35,7 +48,6 @@ const Navigation = () => {
           Settings
         </Box>
       </VStack>
-
       <Flex justifyContent="space-between" sx={footer}>
         <Button colorScheme="facebook" variant="solid">
           Register
