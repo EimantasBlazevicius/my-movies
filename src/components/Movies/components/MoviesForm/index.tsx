@@ -22,11 +22,14 @@ import {
   getFilteredMoviesSelector,
   getSelectedMovieSelector,
 } from "../../slice/selectors";
+import database from "../../../../helpers/database";
+import { getCurrentUserSelector } from "../../../../slice/selectors";
 
 const MoviesForm = () => {
   const dispatch = useDispatch();
   const filteredMovies = useSelector(getFilteredMoviesSelector);
   const selectedMovieDetails = useSelector(getSelectedMovieSelector);
+  const currentUser = useSelector(getCurrentUserSelector);
   const [inputValue, setInputValue] = React.useState("");
   const [description, setDescription] = React.useState("");
 
@@ -38,10 +41,20 @@ const MoviesForm = () => {
     dispatch(getSelectedMovie(movie));
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    database.writeMovieToUser({
+      uid: currentUser.uid,
+      userName: currentUser.displayName,
+      userPhotoURL: currentUser.photoURL,
+      movieTitle: selectedMovieDetails?.Title,
+      moviePoster: selectedMovieDetails?.Poster,
+      opinion: description,
+      ratings: selectedMovieDetails?.Ratings,
+    });
+  };
 
   return (
-    <Stack spacing={3} width="full" py={5} pe={5} ps={2}>
+    <Stack spacing={5} width="full" py={5} pe={5} ps={2}>
       <Text fontWeight={600} as="h3">
         Search for your movie
       </Text>
@@ -82,80 +95,88 @@ const MoviesForm = () => {
           </AutoCompleteList>
         </AutoComplete>
       </Flex>
-      <Flex>
-        <Image
-          boxSize="300px"
-          flexBasis="fit-content"
-          src={selectedMovieDetails?.Poster}
-          alt={selectedMovieDetails?.Title}
+      {selectedMovieDetails && (
+        <Flex>
+          <Image
+            boxSize="300px"
+            flexBasis="fit-content"
+            src={selectedMovieDetails?.Poster}
+            alt={selectedMovieDetails?.Title}
+          />
+
+          <VStack ms={4} alignItems="flex-start">
+            <Box>
+              <Text textAlign="start" as="span" fontWeight={500}>
+                Genre:{" "}
+              </Text>
+              <Text as="span" fontWeight={400}>
+                {selectedMovieDetails?.Genre}
+              </Text>
+            </Box>
+            <Box>
+              <Text as="span" fontWeight={500}>
+                Director:{" "}
+              </Text>
+              <Text as="span" fontWeight={400}>
+                {selectedMovieDetails?.Director}
+              </Text>
+            </Box>
+            <Box>
+              <Text as="span" fontWeight={500}>
+                Actors:{" "}
+              </Text>
+              <Text as="span" fontWeight={400}>
+                {selectedMovieDetails?.Actors}
+              </Text>
+            </Box>
+            <Box>
+              <Text as="span" fontWeight={500}>
+                Awards:{" "}
+              </Text>
+              <Text as="span" fontWeight={400}>
+                {selectedMovieDetails?.Awards}
+              </Text>
+            </Box>
+            <Box>
+              <Text as="span" fontWeight={500}>
+                Box office:{" "}
+              </Text>
+              <Text as="span" fontWeight={400}>
+                {selectedMovieDetails?.BoxOffice}
+              </Text>
+            </Box>
+            <Box>
+              <Text as="span" fontWeight={500}>
+                iMDB rating:{" "}
+              </Text>
+              <Text as="span" fontWeight={400}>
+                {selectedMovieDetails?.imdbRating}
+              </Text>
+            </Box>
+          </VStack>
+        </Flex>
+      )}
+      <Flex flexDirection="column" gap={3} sx={{ marginTop: "auto!important" }}>
+        <Text fontWeight={500}>Share your thoughts about this movie: </Text>
+        <Textarea
+          value={description}
+          variant="outline"
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+            setDescription(e.target.value)
+          }
+          rows={5}
+          resize="none"
+          maxLength={500}
         />
-        <VStack ms={4} alignItems="flex-start">
-          <Box>
-            <Text textAlign="start" as="span" fontWeight={500}>
-              Genre:{" "}
-            </Text>
-            <Text as="span" fontWeight={400}>
-              {selectedMovieDetails?.Genre}
-            </Text>
-          </Box>
-          <Box>
-            <Text as="span" fontWeight={500}>
-              Director:{" "}
-            </Text>
-            <Text as="span" fontWeight={400}>
-              {selectedMovieDetails?.Director}
-            </Text>
-          </Box>
-          <Box>
-            <Text as="span" fontWeight={500}>
-              Actors:{" "}
-            </Text>
-            <Text as="span" fontWeight={400}>
-              {selectedMovieDetails?.Actors}
-            </Text>
-          </Box>
-          <Box>
-            <Text as="span" fontWeight={500}>
-              Awards:{" "}
-            </Text>
-            <Text as="span" fontWeight={400}>
-              {selectedMovieDetails?.Awards}
-            </Text>
-          </Box>
-          <Box>
-            <Text as="span" fontWeight={500}>
-              Box office:{" "}
-            </Text>
-            <Text as="span" fontWeight={400}>
-              {selectedMovieDetails?.BoxOffice}
-            </Text>
-          </Box>
-          <Box>
-            <Text as="span" fontWeight={500}>
-              iMDB rating:{" "}
-            </Text>
-            <Text as="span" fontWeight={400}>
-              {selectedMovieDetails?.imdbRating}
-            </Text>
-          </Box>
-        </VStack>
+        <Button
+          colorScheme="teal"
+          variant="solid"
+          size="md"
+          onClick={handleSubmit}
+        >
+          Post this Amazing Opinion
+        </Button>
       </Flex>
-      <Text fontWeight={500}>Share your thoughts about this movie: </Text>
-      <Textarea
-        value={description}
-        variant="filled"
-        onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-          setDescription(e.target.value)
-        }
-      />
-      <Button
-        colorScheme="teal"
-        variant="solid"
-        size="md"
-        onClick={handleSubmit}
-      >
-        Submit
-      </Button>
     </Stack>
   );
 };

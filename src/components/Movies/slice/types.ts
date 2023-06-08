@@ -4,6 +4,11 @@ export interface SearchMoviesInterface {
   Poster: string;
 }
 
+export interface RatingsInterface {
+  Source: string;
+  Value: string;
+}
+
 export interface MoviesInterface {
   Title: string;
   Year: string;
@@ -19,20 +24,7 @@ export interface MoviesInterface {
   Country: string;
   Awards: string;
   Poster: string;
-  Ratings: [
-    {
-      Source: string;
-      Value: string;
-    },
-    {
-      Source: string;
-      Value: string;
-    },
-    {
-      Source: string;
-      Value: string;
-    }
-  ];
+  Ratings: RatingsInterface[];
   Metascore: string;
   imdbRating: string;
   imdbVotes: string;
