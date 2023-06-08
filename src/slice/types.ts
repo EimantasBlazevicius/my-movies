@@ -1,8 +1,6 @@
+import { User } from "firebase/auth";
+
 export type UserState = {
-  data: UserData;
+  data: User;
   isLoading: boolean;
 };
-
-export interface UserData {
-  name?: string;
-}

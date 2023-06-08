@@ -16,7 +16,7 @@ import {
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { BiChat, BiLike, BiShare } from "react-icons/bi";
 
-const ContentFeed = () => {
+const MoviesFeed = () => {
   return (
     <Flex direction="column" overflow="auto" maxH="100vh">
       <Card
@@ -135,4 +135,4 @@ const ContentFeed = () => {
   );
 };
 
-export default ContentFeed;
+export default MoviesFeed;

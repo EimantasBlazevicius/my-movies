@@ -23,7 +23,9 @@ export const Navigation = helpers.defineMultiStyleConfig({
     },
     menuOption: {
       w: "full",
-      ps: "90px",
+      ps: "30px",
+      display: "flex",
+      alignItems: "center",
       bgColor: "green.50",
       color: "green.700",
       cursor: "pointer",

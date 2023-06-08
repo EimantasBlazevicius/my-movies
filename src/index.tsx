@@ -3,7 +3,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { App } from "./App";
-import Feed from "./components/Feed";
+import Movies from "./components/Movies";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Feed />,
+        element: <Movies />,
       },
     ],
   },
