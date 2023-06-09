@@ -24,7 +24,7 @@ import rt from "./rt.png";
 const MoviesFeed = () => {
   const [moviePosts, setMoviePosts] = React.useState<MoviePostInterface[]>();
 
-  const posts = database.getPosts();
+  const posts = React.useMemo(() => database.getPosts(), []);
   posts.then((res) => {
     setMoviePosts(res);
   });
@@ -68,7 +68,7 @@ const MoviesFeed = () => {
             <CardBody>
               <Text>{post.opinion}</Text>
             </CardBody>
-            <Divider color="grey" boxShadow="0px -9px 10px black" />
+            <Divider color="gray.300" />
             <Flex>
               <Image
                 boxSize="300px"
@@ -129,7 +129,10 @@ const MoviesFeed = () => {
               </VStack>
             </Flex>
 
-            <Divider color="grey" sx={{ boxShadow: "1px 4px 5px grey" }} />
+            <Divider
+              color="gray.200"
+              sx={{ boxShadow: "1px 2px 10px gray.900" }}
+            />
             <CardFooter
               justify="space-between"
               flexWrap="wrap"

@@ -41,10 +41,6 @@ const Navigation = () => {
     dispatch(getUser());
   }, [dispatch]);
 
-  React.useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser]);
-
   onAuthStateChanged(auth, (user) => {
     if (user?.uid) {
       dispatch(setActiveUser(user));
