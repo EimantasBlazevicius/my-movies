@@ -10,7 +10,6 @@ import {
   IconButton,
   CardBody,
   CardFooter,
-  Button,
   Image,
   Divider,
   VStack,
@@ -151,7 +150,7 @@ const MoviesFeed = () => {
               >
                 {post.ratings &&
                   post.ratings.map((rating, index) => (
-                    <Text>
+                    <Text key={index}>
                       <Image boxSize={10} src={emojisForCritics[index]} />
                       {rating.Value}
                     </Text>

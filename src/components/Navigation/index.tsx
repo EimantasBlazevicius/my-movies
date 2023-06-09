@@ -27,9 +27,11 @@ import { MdOndemandVideo } from "react-icons/md";
 import { GiHamburger } from "react-icons/gi";
 import { RiFilePaper2Line } from "react-icons/ri";
 import database from "../../helpers/database";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const provider = new GoogleAuthProvider();
   const { navigation, heading, menuOption, footer } =
     useMultiStyleConfig("Navigation");
@@ -77,13 +79,17 @@ const Navigation = () => {
       </Heading>
       <Divider />
       <VStack divider={<StackDivider borderColor="gray.200" />} spacing={0}>
-        <Box sx={menuOption}>
-          <MdOndemandVideo style={{ marginRight: 12 }} /> Movies
-        </Box>
-        <Box sx={menuOption}>
-          <GiHamburger style={{ marginRight: 12 }} /> Food
-        </Box>
-        <Box sx={menuOption}>
+        <Link to={`/`}>
+          <Box sx={menuOption}>
+            <MdOndemandVideo style={{ marginRight: 12 }} /> Movies
+          </Box>
+        </Link>
+        <Link to={`/food`}>
+          <Box sx={menuOption}>
+            <GiHamburger style={{ marginRight: 12 }} /> Food
+          </Box>
+        </Link>
+        <Box sx={menuOption} onClick={() => navigate("/cv")}>
           <RiFilePaper2Line style={{ marginRight: 12 }} />
           Time to Flex
         </Box>
