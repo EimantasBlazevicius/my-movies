@@ -10,6 +10,7 @@ import {
   Box,
   StackDivider,
   IconButton,
+  Link,
 } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCurrentUserSelector } from "../../slice/selectors";
@@ -27,7 +28,8 @@ import { MdOndemandVideo } from "react-icons/md";
 import { GiHamburger } from "react-icons/gi";
 import { RiFilePaper2Line } from "react-icons/ri";
 import database from "../../helpers/database";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -38,25 +40,28 @@ const Navigation = () => {
   const currentUser = useSelector(getCurrentUserSelector);
   const auth = getAuth(app);
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [user, loading, error] = useAuthState(auth);
 
   React.useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
 
-  onAuthStateChanged(auth, (user) => {
-    if (user?.uid) {
+  React.useEffect(() => {
+    if (user) {
+      console.log(user);
       dispatch(setActiveUser(user));
       setLoggedIn(true);
     } else {
       setLoggedIn(false);
     }
-  });
+  }, [user]);
 
   const handleJoin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log("Logged in", result.user);
         database.writeUser(result.user.uid);
+        dispatch(setActiveUser(result.user));
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -79,16 +84,12 @@ const Navigation = () => {
       </Heading>
       <Divider />
       <VStack divider={<StackDivider borderColor="gray.200" />} spacing={0}>
-        <Link to={`/`}>
-          <Box sx={menuOption}>
-            <MdOndemandVideo style={{ marginRight: 12 }} /> Movies
-          </Box>
-        </Link>
-        <Link to={`/food`}>
-          <Box sx={menuOption}>
-            <GiHamburger style={{ marginRight: 12 }} /> Food
-          </Box>
-        </Link>
+        <Box sx={menuOption} onClick={() => navigate("/")}>
+          <MdOndemandVideo style={{ marginRight: 12 }} /> Movies
+        </Box>
+        <Box sx={menuOption} onClick={() => navigate("/food")}>
+          <GiHamburger style={{ marginRight: 12 }} /> Food
+        </Box>
         <Box sx={menuOption} onClick={() => navigate("/cv")}>
           <RiFilePaper2Line style={{ marginRight: 12 }} />
           Time to Flex
@@ -96,7 +97,12 @@ const Navigation = () => {
       </VStack>
       <Flex justifyContent="space-between" sx={footer}>
         {!loggedIn && (
-          <Button colorScheme="whatsapp" variant="solid" onClick={handleJoin}>
+          <Button
+            colorScheme="whatsapp"
+            variant="solid"
+            onClick={handleJoin}
+            w="full"
+          >
             Join
           </Button>
         )}

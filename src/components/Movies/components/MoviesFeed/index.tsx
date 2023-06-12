@@ -13,6 +13,7 @@ import {
   Image,
   Divider,
   VStack,
+  Progress,
 } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import database, { MoviePostInterface } from "../../../../helpers/database";
@@ -76,21 +77,18 @@ const MoviesFeed = () => {
                 alt={post.movieTitle ? post.movieTitle : ""}
               />
 
-              <VStack ms={4} alignItems="flex-start">
+              <VStack ms={4} my={5} alignItems="flex-start" w="full" pe={4}>
                 <Box>
-                  <Text textAlign="start" as="span" fontWeight={500}>
-                    Title:{" "}
-                  </Text>
-                  <Text as="span" fontWeight={400}>
+                  <Text as="h5" fontSize={30} fontWeight={500}>
                     {post.movieTitle ? post.movieTitle : ""}
                   </Text>
                 </Box>
-                {/* <Box>
+                <Box>
                   <Text as="span" fontWeight={500}>
                     Director:{" "}
                   </Text>
                   <Text as="span" fontWeight={400}>
-                    {selectedMovieDetails?.Director}
+                    {post.director}
                   </Text>
                 </Box>
                 <Box>
@@ -98,7 +96,7 @@ const MoviesFeed = () => {
                     Actors:{" "}
                   </Text>
                   <Text as="span" fontWeight={400}>
-                    {selectedMovieDetails?.Actors}
+                    {post.actors}
                   </Text>
                 </Box>
                 <Box>
@@ -106,7 +104,7 @@ const MoviesFeed = () => {
                     Awards:{" "}
                   </Text>
                   <Text as="span" fontWeight={400}>
-                    {selectedMovieDetails?.Awards}
+                    {post.awards}
                   </Text>
                 </Box>
                 <Box>
@@ -114,17 +112,22 @@ const MoviesFeed = () => {
                     Box office:{" "}
                   </Text>
                   <Text as="span" fontWeight={400}>
-                    {selectedMovieDetails?.BoxOffice}
+                    {post.boxOffice}
                   </Text>
                 </Box>
                 <Box>
                   <Text as="span" fontWeight={500}>
-                    iMDB rating:{" "}
+                    User rating:{" "}
                   </Text>
-                  <Text as="span" fontWeight={400}>
-                    {selectedMovieDetails?.imdbRating}
-                  </Text>
-                </Box> */}
+                </Box>
+                <Progress
+                  colorScheme="green"
+                  size="lg"
+                  value={post.opinionRating}
+                  max={10}
+                  min={0}
+                  w="full"
+                />
               </VStack>
             </Flex>
 
@@ -150,10 +153,10 @@ const MoviesFeed = () => {
               >
                 {post.ratings &&
                   post.ratings.map((rating, index) => (
-                    <Text key={index}>
+                    <Box key={index}>
                       <Image boxSize={10} src={emojisForCritics[index]} />
-                      {rating.Value}
-                    </Text>
+                      <Text textAlign="center">{rating.Value}</Text>
+                    </Box>
                   ))}
               </Flex>
             </CardFooter>

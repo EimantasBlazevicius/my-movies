@@ -5,8 +5,8 @@ export interface SearchMoviesInterface {
 }
 
 export interface RatingsInterface {
-  Source: string;
-  Value: string;
+  Source?: string;
+  Value?: string;
 }
 
 export interface MoviesInterface {

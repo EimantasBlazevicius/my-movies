@@ -16,7 +16,12 @@ export interface MoviePostInterface {
   movieTitle?: string;
   moviePoster?: string;
   opinion?: string;
+  opinionRating?: number;
   ratings?: RatingsInterface[];
+  director?: string;
+  actors?: string;
+  awards?: string;
+  boxOffice?: string;
 }
 
 const db = getFirestore(app);
@@ -43,14 +48,20 @@ const writeUser = (uid: string) => {
 };
 
 const writeMovieToUser = (data: MoviePostInterface) => {
+  console.log(data);
   setDoc(doc(db, "users", data.uid), {
     uid: data.uid,
     userName: data.userName,
     userPhotoURL: data.userPhotoURL,
-    movieTitle: data.movieTitle,
-    moviePoster: data.moviePoster,
-    opinion: data.opinion,
-    ratings: data.ratings && [...data.ratings],
+    movieTitle: data.movieTitle ? data.movieTitle : "",
+    moviePoster: data.moviePoster ? data.moviePoster : "",
+    opinion: data.opinion ? data.opinion : "",
+    ratings: data.ratings ? [...data.ratings] : [],
+    opinionRating: data.opinionRating,
+    director: data.director ? data.director : "",
+    actors: data.actors ? data.actors : "",
+    awards: data.awards ? data.awards : "",
+    boxOffice: data.boxOffice ? data.boxOffice : "",
   });
 };
 

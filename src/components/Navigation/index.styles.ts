@@ -12,7 +12,7 @@ export const Navigation = helpers.defineMultiStyleConfig({
   baseStyle: {
     navigation: {
       bgColor: "gray.100",
-      w: "300px",
+      minW: "300px",
       boxShadow: "3px 0px 5px rgb(0 0 0 / 0.2);",
       h: "100vh",
     },
@@ -20,6 +20,7 @@ export const Navigation = helpers.defineMultiStyleConfig({
       textAlign: "center",
       py: "30px",
       color: "teal.700",
+      px: 5,
     },
     menuOption: {
       w: "full",

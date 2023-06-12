@@ -9,6 +9,10 @@ import {
   Image,
   VStack,
   Box,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
 } from "@chakra-ui/react";
 import {
   AutoComplete,
@@ -32,6 +36,7 @@ const MoviesForm = () => {
   const currentUser = useSelector(getCurrentUserSelector);
   const [inputValue, setInputValue] = React.useState("");
   const [description, setDescription] = React.useState("");
+  const [opinionRating, setOpinionRating] = React.useState(5);
 
   React.useEffect(() => {
     dispatch(getFilteredMovies(inputValue));
@@ -50,6 +55,11 @@ const MoviesForm = () => {
       moviePoster: selectedMovieDetails?.Poster,
       opinion: description,
       ratings: selectedMovieDetails?.Ratings,
+      actors: selectedMovieDetails?.Actors,
+      awards: selectedMovieDetails?.Awards,
+      boxOffice: selectedMovieDetails?.BoxOffice,
+      director: selectedMovieDetails?.Director,
+      opinionRating: opinionRating,
     });
   };
 
@@ -157,6 +167,23 @@ const MoviesForm = () => {
         </Flex>
       )}
       <Flex flexDirection="column" gap={3} sx={{ marginTop: "auto!important" }}>
+        <Text fontWeight={500}>Share your Rating about this movie: </Text>
+        <Slider
+          aria-label="slider-ex-2"
+          colorScheme="green"
+          min={0}
+          max={10}
+          step={1}
+          defaultValue={5}
+          onChange={(value: number) => setOpinionRating(value)}
+        >
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb boxSize={8}>
+            <Text>{opinionRating}</Text>
+          </SliderThumb>
+        </Slider>
         <Text fontWeight={500}>Share your thoughts about this movie: </Text>
         <Textarea
           value={description}
