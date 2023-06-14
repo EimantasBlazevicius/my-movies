@@ -37,7 +37,6 @@ export const moviesSlice = createSlice({
       state,
       action: PayloadAction<MoviePostInterface[]>
     ) => {
-      console.log(action.payload);
       state.posts = action.payload;
       state.isLoading = false;
     },

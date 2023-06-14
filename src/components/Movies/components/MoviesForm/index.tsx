@@ -33,11 +33,16 @@ import {
 } from "../../slice/selectors";
 import database from "../../../../helpers/database";
 import { getCurrentUserSelector } from "../../../../slice/selectors";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { getAuth } from "firebase/auth";
+import app from "../../../../initFirebase";
 
 const MoviesForm = () => {
   const dispatch = useDispatch();
   const filteredMovies = useSelector(getFilteredMoviesSelector);
   const selectedMovieDetails = useSelector(getSelectedMovieSelector);
+  const auth = getAuth(app);
+  const [user] = useAuthState(auth);
   const currentUser = useSelector(getCurrentUserSelector);
   const [inputValue, setInputValue] = React.useState("");
   const [description, setDescription] = React.useState("");
@@ -219,6 +224,7 @@ const MoviesForm = () => {
           variant="solid"
           size="md"
           onClick={handleSubmit}
+          isDisabled={!user}
         >
           Post this Amazing Opinion
         </Button>
