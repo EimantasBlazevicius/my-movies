@@ -13,6 +13,7 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
+  useToast,
 } from "@chakra-ui/react";
 import {
   AutoComplete,
@@ -21,7 +22,11 @@ import {
   AutoCompleteList,
 } from "@choc-ui/chakra-autocomplete";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilteredMovies, getSelectedMovie } from "../../slice";
+import {
+  getFilteredMovies,
+  getMoviePosts,
+  getSelectedMovie,
+} from "../../slice";
 import {
   getFilteredMoviesSelector,
   getSelectedMovieSelector,
@@ -37,6 +42,7 @@ const MoviesForm = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [opinionRating, setOpinionRating] = React.useState(5);
+  const toast = useToast();
 
   React.useEffect(() => {
     dispatch(getFilteredMovies(inputValue));
@@ -61,12 +67,25 @@ const MoviesForm = () => {
       director: selectedMovieDetails?.Director,
       opinionRating: opinionRating,
     });
+
+    toast({
+      title: "Movie Saved.",
+      description: "I will watch your favorite movie soon!",
+      status: "success",
+      duration: 1900,
+      isClosable: false,
+    });
+
+    dispatch(getMoviePosts());
   };
 
   return (
     <Stack spacing={5} width="full" py={5} pe={5} ps={2}>
       <Text fontWeight={600} as="h3">
         Search for your movie
+      </Text>
+      <Text fontWeight={300} fontStyle="italic" fontSize={13} mt="inherit">
+        One movie per logged in user, you can override your record.
       </Text>
       <Flex
         _dark={{

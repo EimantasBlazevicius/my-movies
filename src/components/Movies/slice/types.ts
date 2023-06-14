@@ -1,3 +1,5 @@
+import { MoviePostInterface } from "../../../helpers/database";
+
 export interface SearchMoviesInterface {
   Title: string;
   Year: string;
@@ -40,5 +42,6 @@ export interface MoviesInterface {
 export type MoviesState = {
   data?: SearchMoviesInterface[];
   selected?: MoviesInterface;
+  posts?: MoviePostInterface[];
   isLoading: boolean;
 };

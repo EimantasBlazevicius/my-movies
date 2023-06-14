@@ -47,9 +47,8 @@ const writeUser = (uid: string) => {
   });
 };
 
-const writeMovieToUser = (data: MoviePostInterface) => {
-  console.log(data);
-  setDoc(doc(db, "users", data.uid), {
+const writeMovieToUser = async (data: MoviePostInterface) => {
+  await setDoc(doc(db, "users", data.uid), {
     uid: data.uid,
     userName: data.userName,
     userPhotoURL: data.userPhotoURL,

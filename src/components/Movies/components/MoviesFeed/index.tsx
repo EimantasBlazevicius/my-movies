@@ -16,20 +16,23 @@ import {
   Progress,
 } from "@chakra-ui/react";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import database, { MoviePostInterface } from "../../../../helpers/database";
 import imdb from "./imdb.png";
 import meta from "./meta.png";
 import rt from "./rt.png";
+import { useDispatch, useSelector } from "react-redux";
+import { getMoviePostsSelector } from "../../slice/selectors";
+import { getMoviePosts } from "../../slice";
 
 const MoviesFeed = () => {
-  const [moviePosts, setMoviePosts] = React.useState<MoviePostInterface[]>();
-
-  const posts = React.useMemo(() => database.getPosts(), []);
-  posts.then((res) => {
-    setMoviePosts(res);
-  });
-
   const emojisForCritics = [imdb, rt, meta];
+  const dispatch = useDispatch();
+  const moviePosts = useSelector(getMoviePostsSelector);
+
+  React.useEffect(() => {
+    dispatch(getMoviePosts());
+  }, [dispatch]);
+
+  console.log(moviePosts);
 
   return (
     <Flex direction="column" overflow="auto" maxH="100vh" w="full" py={3}>

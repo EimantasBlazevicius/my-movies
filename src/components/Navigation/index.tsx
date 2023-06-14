@@ -48,13 +48,12 @@ const Navigation = () => {
 
   React.useEffect(() => {
     if (user) {
-      console.log(user);
       dispatch(setActiveUser(user));
       setLoggedIn(true);
     } else {
       setLoggedIn(false);
     }
-  }, [user]);
+  }, [dispatch, user]);
 
   const handleJoin = () => {
     signInWithPopup(auth, provider)
