@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Divider,
@@ -6,36 +7,34 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
-import React from "react";
-import Slides from "./Slides";
+import Slides, { Slide } from "./Slides";
+import { RecipeProps } from "./recipes";
 
-const Recipe = () => {
+const Recipe = ({ title, ingredients, steps, imageURLs }: RecipeProps) => {
   return (
     <Flex w="full" bgColor="white" flexDir="column">
-      <Flex h="65vh">
-        <Slides />
-        <Flex flexDir="column" p={10} w="50%">
+      <Flex>
+        <Slides imageURLs={imageURLs} />
+        <Flex flexDir="column" p={10} w="50%" h="fit-content">
           <Text as="h1" fontSize="5xl">
-            Trikampiukai
+            {title}
           </Text>
 
           <Divider sx={{ my: 5, borderColor: "gray.500", w: "50%" }} />
 
           <Box>
             <UnorderedList>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
-              <ListItem fontSize="2xl">Lorem ipsum dolor sit amet</ListItem>
+              {ingredients.map((ingredient) => (
+                <ListItem fontSize="2xl">{ingredient}</ListItem>
+              ))}
             </UnorderedList>
           </Box>
         </Flex>
       </Flex>
-      <Flex>asdasdasdas</Flex>
+      <Divider sx={{ borderColor: "gray.300", w: "90%" }} />
+      <Flex p={10} pt={5}>
+        {steps}
+      </Flex>
     </Flex>
   );
 };

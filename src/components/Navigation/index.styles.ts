@@ -15,6 +15,7 @@ export const Navigation = helpers.defineMultiStyleConfig({
       minW: "300px",
       boxShadow: "3px 0px 5px rgb(0 0 0 / 0.2);",
       h: "100vh",
+      position: "fixed",
     },
     heading: {
       textAlign: "center",

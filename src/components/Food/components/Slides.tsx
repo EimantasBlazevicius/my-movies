@@ -2,7 +2,11 @@
 import React from "react";
 import { Box, Flex, HStack, Text, Image } from "@chakra-ui/react";
 
-const Slides = () => {
+export interface Slide {
+  img: string;
+}
+
+const Slides = ({ imageURLs }: { imageURLs: Slide[] }) => {
   const arrowStyles = {
     cursor: "pointer",
     pos: "absolute",
@@ -21,23 +25,7 @@ const Slides = () => {
       bg: "black",
     },
   };
-  const slides = [
-    {
-      img: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-    },
-    {
-      img: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-  ];
+  const slides = [...imageURLs];
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const slidesCount = slides.length;
 
@@ -60,6 +48,7 @@ const Slides = () => {
   return (
     <Flex
       w="50%"
+      h="68vh"
       _dark={{
         bg: "#3e3e3e",
       }}
