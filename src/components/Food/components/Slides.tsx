@@ -74,6 +74,7 @@ const Slides = ({ imageURLs }: { imageURLs: Slide[] }) => {
                 alt="carousel image"
                 boxSize="full"
                 backgroundSize="cover"
+                objectFit="cover"
               />
             </Box>
           ))}

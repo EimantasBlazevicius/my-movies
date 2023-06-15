@@ -28,7 +28,7 @@ export const recipes: RecipeProps[] = [
         img: "https://upload.wikimedia.org/wikipedia/commons/9/91/Pizza-3007395.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Pizza-preparation.jpg",
+        img: "https://product-assets.faasos.io/production/product/image_1631125907990_Low_IFC_Double_Cheese_Pizza.jpg",
       },
     ],
   },
@@ -49,10 +49,10 @@ export const recipes: RecipeProps[] = [
       "1. Preheat the oven to 350°F (175°C).\n2. In a large mixing bowl, cream together butter, white sugar, and brown sugar until smooth.\n3. Beat in the eggs one at a time, then stir in vanilla.\n4. In a separate bowl, combine flour, baking soda, and salt. Gradually add the dry ingredients to the creamed mixture.\n5. Fold in the chocolate chips.\n6. Drop rounded tablespoons of dough onto ungreased baking sheets.\n7. Bake for 10-12 minutes or until golden brown.\n8. Allow cookies to cool on baking sheet for 5 minutes before transferring to a wire rack.\n9. Enjoy!",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/f/f1/2ChocolateChipCookies.jpg",
+        img: "https://static01.nyt.com/images/2022/02/12/dining/JT-Chocolate-Chip-Cookies/JT-Chocolate-Chip-Cookies-master768.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/1/11/Chocolatechipcookies.jpg",
+        img: "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/62298.jpg?output-format=auto&output-quality=auto&resize=600:*",
       },
     ],
   },
@@ -75,10 +75,10 @@ export const recipes: RecipeProps[] = [
       "1. In a small bowl, combine soy sauce, cornstarch, and chicken broth. Set aside.\n2. Heat vegetable oil in a large skillet or wok over medium-high heat.\n3. Add chicken slices and stir-fry until browned and cooked through. Remove from skillet and set aside.\n4. In the same skillet, add bell pepper, broccoli, carrot, garlic, and ginger. Stir-fry until vegetables are crisp-tender.\n5. Return the chicken to the skillet and pour in the soy sauce mixture.\n6. Cook, stirring constantly, until the sauce has thickened.\n7. Garnish with chopped green onions.\n8. Serve over rice or noodles.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Stir_Fry_-_Vegetarian_1.jpg",
+        img: "https://natashaskitchen.com/wp-content/uploads/2018/08/Chicken-Stir-Fry-1-1-500x500.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/94/Chicken_Stir-Fry_with_Vegetables.jpg",
+        img: "https://everydaydishes.com/wp-content/uploads/2014/12/chicken-stir-fry-with-noodles-everydaydishes_com-H.jpg",
       },
     ],
   },
@@ -96,10 +96,10 @@ export const recipes: RecipeProps[] = [
       "1. Arrange tomato slices and mozzarella cheese slices on a serving platter.\n2. Tuck fresh basil leaves between the tomato and mozzarella slices.\n3. Drizzle with balsamic vinegar and olive oil.\n4. Season with salt and pepper.\n5. Serve immediately.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Caprese_salad_%28tomato%2C_mozzarella_and_basil%29.jpg",
+        img: "https://feelgoodfoodie.net/wp-content/uploads/2017/03/Avocado-Caprese-Salad-5.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/34/Caprese_salad_2.jpg",
+        img: "https://centslessdeals.com/wp-content/uploads/2020/09/Pesto-Caprese-Salad-CentslessMeals-1.jpg",
       },
     ],
   },
@@ -118,10 +118,10 @@ export const recipes: RecipeProps[] = [
       "1. Cook spaghetti according to package instructions. Drain and set aside.\n2. In a large skillet, cook bacon until crispy. Remove from skillet and drain on paper towels.\n3. In the same skillet, sauté garlic until fragrant.\n4. In a bowl, whisk together eggs, Parmesan cheese, and chopped parsley.\n5. Add cooked spaghetti to the skillet with garlic and toss to coat.\n6. Remove from heat and quickly stir in the egg mixture.\n7. The heat from the spaghetti will cook the eggs.\n8. Season with salt and pepper.\n9. Serve topped with crispy bacon.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/1/15/Spaghetti_carbonara.jpg",
+        img: "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1558_1_1436795948.jpg?tr=w-800,h-800",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/95/Pasta_carbonara.jpg",
+        img: "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg",
       },
     ],
   },
@@ -140,10 +140,10 @@ export const recipes: RecipeProps[] = [
       "1. In a large salad bowl, combine torn lettuce, grated Parmesan cheese, and croutons.\n2. In a small bowl, whisk together Caesar dressing, lemon juice, minced garlic, salt, and pepper.\n3. Pour the dressing over the salad and toss to coat.\n4. Serve immediately.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/2/20/Caesar_salad_1.jpg",
+        img: "https://www.halfbakedharvest.com/wp-content/uploads/2022/07/Buffalo-Ranch-Pretzel-Chicken-Caesar-Salad-1.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Caesar_salad.jpg",
+        img: "https://www.recipetineats.com/wp-content/uploads/2016/05/Caesar-Salad_7-SQ.jpg",
       },
     ],
   },
@@ -164,10 +164,10 @@ export const recipes: RecipeProps[] = [
       "1. In a skillet, brown ground beef over medium heat. Drain excess fat.\n2. Add taco seasoning and cook according to package instructions.\n3. Warm flour tortillas in a dry skillet or microwave.\n4. Assemble tacos by placing a spoonful of ground beef on each tortilla.\n5. Top with shredded lettuce, diced tomatoes, shredded cheddar cheese, cilantro, and red onion.\n6. Serve with sour cream and salsa.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/0/0e/NCI_Visuals_Food_Tacos_With_Beef_Or_Chicken.jpg",
+        img: "https://feelgoodfoodie.net/wp-content/uploads/2017/04/Ground-Beef-Tacos-9.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/6/63/Street_tacos_11.jpg",
+        img: "https://thegirlonbloor.com/wp-content/uploads/2022/10/Crockpot-beef-tacos-8.jpg",
       },
     ],
   },
@@ -187,10 +187,10 @@ export const recipes: RecipeProps[] = [
       "1. Preheat the oven to 400°F (200°C).\n2. Pound the chicken breasts to an even thickness.\n3. In a shallow dish, combine breadcrumbs, grated Parmesan cheese, salt, and pepper.\n4. Dip each chicken breast into beaten eggs, then coat with the breadcrumb mixture.\n5. Heat olive oil in a skillet over medium heat. Cook the chicken breasts until golden brown on both sides.\n6. Transfer the chicken breasts to a baking dish.\n7. Pour marinara sauce over the chicken breasts and top with shredded mozzarella cheese.\n8. Bake for 20-25 minutes or until the chicken is cooked through and the cheese is melted and bubbly.\n9. Sprinkle with chopped fresh basil before serving.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/0/07/Chicken_Parmesan.png",
+        img: "https://thecozycook.com/wp-content/uploads/2022/08/Chicken-Parmesan-Recipe-f-500x500.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Chicken_parmigiana.jpg",
+        img: "https://www.skinnytaste.com/wp-content/uploads/2012/09/skinny-chicken-parmigiana-550x733.jpg",
       },
     ],
   },
@@ -217,10 +217,10 @@ export const recipes: RecipeProps[] = [
       "1. Cook spaghetti according to package instructions. Drain and set aside.\n2. In a large skillet, heat olive oil over medium heat.\n3. Add diced onion, minced garlic, diced carrot, and diced celery. Sauté until vegetables are softened.\n4. Add ground beef and ground pork to the skillet. Cook until browned and cooked through.\n5. Stir in crushed tomatoes, tomato paste, red wine (if using), dried oregano, dried basil, salt, and pepper.\n6. Simmer the sauce for about 20 minutes.\n7. Serve the sauce over cooked spaghetti.\n8. Sprinkle with grated Parmesan cheese.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/1/11/Spaghetti_bolognese_1.jpg",
+        img: "https://www.sprinklesandsprouts.com/wp-content/uploads/2019/04/Authentic-Spaghetti-Bolognese-SQ.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/6/62/Spaghetti_bolognese.jpg",
+        img: "https://leitesculinaria.com/wp-content/uploads/2021/09/spaghetti-bolognese.jpg",
       },
     ],
   },
@@ -244,10 +244,10 @@ export const recipes: RecipeProps[] = [
       "1. Preheat the oven to 350°F (175°C).\n2. In a large mixing bowl, combine flour, sugar, cocoa powder, baking powder, baking soda, and salt.\n3. Add eggs, milk, vegetable oil, and vanilla extract. Beat on medium speed for 2 minutes.\n4. Stir in boiling water. The batter will be thin.\n5. Pour the batter into greased and floured baking pans.\n6. Bake for 30-35 minutes or until a toothpick inserted into the center comes out clean.\n7. Allow the cakes to cool in the pans for 10 minutes before transferring to a wire rack.\n8. If desired, frost the cakes with chocolate frosting.\n9. Slice and serve.",
     imageURLs: [
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Chocolate_Cake_%28385733295%29.jpg",
+        img: "https://pixnio.com/free-images/food-and-drink/desserts-cakes/chocolate-cake-725x544.jpg",
       },
       {
-        img: "https://upload.wikimedia.org/wikipedia/commons/2/20/Chocolate_Cake.jpg",
+        img: "https://i1.pickpik.com/photos/296/812/924/cake-cream-cake-cherry-pie-chocolate-cake-preview.jpg",
       },
     ],
   },

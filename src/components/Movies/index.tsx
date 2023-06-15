@@ -7,10 +7,10 @@ import { MoviePostInterface } from "../../helpers/database";
 const Movies = () => {
   return (
     <Flex gap={3} w="full">
-      <Flex w="45%">
+      <Flex w="35vw">
         <MoviesFeed />
       </Flex>
-      <Flex w="55%">
+      <Flex w="45vw">
         <MoviesForm />
       </Flex>
     </Flex>
