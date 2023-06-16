@@ -6,17 +6,20 @@ import { recipes } from "./components/recipes";
 const Food = () => {
   return (
     <Flex gap={3} w="full" flexDir="column">
-      {recipes.map(({ title, ingredients, steps, imageURLs }) => (
-        <>
-          <Recipe
-            title={title}
-            ingredients={ingredients}
-            steps={steps}
-            imageURLs={imageURLs}
-          />
-          <Divider />
-        </>
-      ))}
+      {recipes.map(
+        ({ title, ingredients, steps, generalDescription, imageURLs }) => (
+          <>
+            <Recipe
+              title={title}
+              ingredients={ingredients}
+              steps={steps}
+              generalDescription={generalDescription}
+              imageURLs={imageURLs}
+            />
+            <Divider borderColor="gray.400" />
+          </>
+        )
+      )}
     </Flex>
   );
 };

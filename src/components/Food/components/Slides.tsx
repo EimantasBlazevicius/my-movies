@@ -46,16 +46,7 @@ const Slides = ({ imageURLs }: { imageURLs: Slide[] }) => {
     ml: `-${currentSlide * 100}%`,
   };
   return (
-    <Flex
-      w="50%"
-      h="68vh"
-      _dark={{
-        bg: "#3e3e3e",
-      }}
-      p={10}
-      // alignItems="center"
-      justifyContent="center"
-    >
+    <Flex w="50%" h="60vh" p={10} alignItems="center" justifyContent="center">
       <Flex w="full" overflow="hidden" pos="relative">
         <Flex h="400px" w="full" {...carouselStyle}>
           {slides.map((slide, sid) => (
