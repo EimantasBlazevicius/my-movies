@@ -89,6 +89,11 @@ const Navigation = () => {
         <Box sx={menuOption} onClick={() => navigate("/food")}>
           <GiHamburger style={{ marginRight: 12 }} /> Food
         </Box>
+
+        <Box sx={menuOption} onClick={() => navigate("/hackaton")}>
+          {/* <RiFilePaper2Line style={{ marginRight: 12 }} /> */}
+          Hackaton projects: TODO
+        </Box>
         <Box sx={menuOption} onClick={() => navigate("/cv")}>
           <RiFilePaper2Line style={{ marginRight: 12 }} />
           Time to Flex
