@@ -1,6 +1,6 @@
 import { takeEvery, put } from "redux-saga/effects";
-import { getUser, getUserSuccess } from "./index";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getUser, getUserSuccess, getUserFailure } from "./index";
+import { getAuth, GoogleAuthProvider, User } from "firebase/auth";
 import app from "../initFirebase";
 
 const auth = getAuth(app);
@@ -10,6 +10,8 @@ provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
 function* getUserFetch() {
   if (auth.currentUser !== null) {
     yield put(getUserSuccess(auth.currentUser));
+  } else {
+    yield put(getUserFailure({} as User));
   }
 }
 
