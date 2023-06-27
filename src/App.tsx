@@ -8,9 +8,14 @@ import ContentLoader from "./components/shared/ContentLoader";
 export const App = () => (
   <ChakraProvider theme={theme}>
     <ContentLoader>
-      <Flex gap={1}>
+      <Flex gap={1} overflow="hidden">
         <Navigation />
-        <Box>
+        <Box
+          sx={{
+            overflow: { base: "auto", xl: "visible" },
+            height: { base: "100vh", xl: "unset" },
+          }}
+        >
           <Outlet />
         </Box>
       </Flex>

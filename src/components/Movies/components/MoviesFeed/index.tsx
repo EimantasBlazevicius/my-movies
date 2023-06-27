@@ -35,12 +35,19 @@ const MoviesFeed = () => {
   console.log(moviePosts);
 
   return (
-    <Flex direction="column" overflow="auto" maxH="100vh" w="full" py={3}>
+    <Flex
+      direction="column"
+      w="full"
+      py={3}
+      sx={{
+        overflow: { base: "visible", xl: "auto" },
+        maxHeight: { base: "unset", xl: "100vh" },
+      }}
+    >
       {moviePosts &&
         moviePosts.map((post) => (
           <Card
             key={post.uid}
-            maxW="35vw"
             maxH="fit-content"
             boxShadow="3px 0px 10px rgb(0 0 0 / 0.2), 0px -3px 10px rgb(0 0 0 / 0.2)"
             mt={3}

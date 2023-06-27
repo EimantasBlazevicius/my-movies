@@ -190,7 +190,11 @@ const MoviesForm = () => {
           </VStack>
         </Flex>
       )}
-      <Flex flexDirection="column" gap={3} sx={{ marginTop: "auto!important" }}>
+      <Flex
+        flexDirection="column"
+        gap={3}
+        sx={{ marginTop: { base: "5px", xl: "auto!important" } }}
+      >
         <Text fontWeight={500}>Share your Rating about this movie: </Text>
         <Slider
           aria-label="slider-ex-2"
