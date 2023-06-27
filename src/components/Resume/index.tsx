@@ -13,7 +13,7 @@ import ProfilePic from "./profile.jpg";
 
 const Resume = () => {
   return (
-    <Flex flexDir="column">
+    <Flex flexDir="column" overflow="auto" maxH="100vh">
       <Flex>
         <Flex p={50} w="full" alignItems="center" justifyContent="center">
           <Box

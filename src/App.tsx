@@ -10,7 +10,7 @@ export const App = () => (
     <ContentLoader>
       <Flex gap={1}>
         <Navigation />
-        <Box sx={{ marginLeft: "300px" }}>
+        <Box>
           <Outlet />
         </Box>
       </Flex>
