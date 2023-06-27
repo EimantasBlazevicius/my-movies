@@ -9,6 +9,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import ProfilePic from "./profile.jpg";
+
 const Resume = () => {
   return (
     <Flex flexDir="column">
@@ -25,13 +27,7 @@ const Resume = () => {
             overflow="hidden"
             mx="auto"
           >
-            <Image
-              w="full"
-              h={350}
-              fit="cover"
-              src="https://scontent.fvno1-1.fna.fbcdn.net/v/t39.30808-6/314499005_6119831314711582_1625001396908890999_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SwhHgsUe7_kAX_kIyHE&_nc_ht=scontent.fvno1-1.fna&oh=00_AfD3JJk-NVvMnzqubbmuF-8GKdOxsWVhWK-rFjV025J2KA&oe=6492F1EA"
-              alt="avatar"
-            />
+            <Image w="full" h={350} fit="cover" src={ProfilePic} alt="avatar" />
 
             <Box py={5} textAlign="center">
               <Link
